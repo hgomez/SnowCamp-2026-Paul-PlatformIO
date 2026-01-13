@@ -30,33 +30,33 @@ void all_leds_on() {
 
 
 void circle_one_led(int time) {
+ 
+  all_leds_off();
 
-    all_leds_off();
+  digitalWrite(D3, HIGH);
+  delay(time);
+  
+  digitalWrite(D3, LOW);
+  digitalWrite(D4, HIGH);
+  delay(time);
 
-    digitalWrite(D3, HIGH);
-    delay(time);
-    
-    digitalWrite(D3, LOW);
-    digitalWrite(D4, HIGH);
-    delay(time);
+  digitalWrite(D4, LOW);
+  digitalWrite(D5, HIGH);
+  delay(time);
 
-    digitalWrite(D4, LOW);
-    digitalWrite(D5, HIGH);
-    delay(time);
+  digitalWrite(D5, LOW);
+  digitalWrite(D6, HIGH);
+  delay(time);
 
-    digitalWrite(D5, LOW);
-    digitalWrite(D6, HIGH);
-    delay(time);
+  digitalWrite(D6, LOW);
+  digitalWrite(D7, HIGH);
+  delay(time);
 
-    digitalWrite(D6, LOW);
-    digitalWrite(D7, HIGH);
-    delay(time);
+  digitalWrite(D7, LOW);
+  digitalWrite(D8, HIGH);
+  delay(time);
 
-    digitalWrite(D7, LOW);
-    digitalWrite(D8, HIGH);
-    delay(time);
-
-    digitalWrite(D8, LOW);
+  digitalWrite(D8, LOW);
 }
 
 void setup() {
@@ -81,12 +81,14 @@ void loop() {
   // Manage bootloader switch for over_the_cable fw update (type ! on serial console)
   while ( Serial && Serial.available() ) if (Serial.read()=='!') enterSerialDfu();
 
+  Serial.println("Leds off");
   all_leds_off();
   delay(1000);
 
+  Serial.println("Leds on");
   all_leds_on();
   delay(1000);
 
+  Serial.println("Leds circle");
   circle_one_led(100);
-
 }
