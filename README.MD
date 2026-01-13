@@ -14,7 +14,7 @@ supported us throughout this project, allowing each participant to leave the wor
 very low power consumption, which enables long battery life using a simple and widely available CR2032 coin cell. Beyond supporting us in this endeavor, 
 Seeed offers a range of well-supported and well-documented products, making them easy to get started with, including in the Arduino environment.
 
-### Install Arduino
+### Install VSCode and PlatformIO
 
 The project has been made with PlatformIO and VSCode
 
