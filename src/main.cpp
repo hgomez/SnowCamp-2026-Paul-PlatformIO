@@ -141,7 +141,7 @@ void startAdv(void)
 
   // Setup device name
   sprintf(ble_name,"M&G%s%-7.7s",myName, topics[topic_i]);
-  //Serial.printf("Name : %s (%d)\r\n",ble_name,strlen(ble_name));
+  Serial.printf("Name : %s (%d)\r\n",ble_name,strlen(ble_name));
 
   // Clean
   Bluefruit.Advertising.stop();
